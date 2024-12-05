@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-gray-100;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@layer components {
+  .tactical-card {
+    @apply bg-surface border border-surface-light rounded-lg shadow-tactical
+    hover:shadow-tactical-lg transition-shadow duration-200;
+  }
+
+  .tactical-input {
+    @apply bg-surface-dark border-surface-light rounded-md
+    focus:ring-primary-500 focus:border-primary-500
+    text-gray-100 placeholder-gray-500;
+  }
+
+  .tactical-button {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .tactical-button-primary {
+    @apply tactical-button bg-primary-600 hover:bg-primary-700 
+    text-white focus:ring-primary-500;
+  }
+
+  .tactical-button-secondary {
+    @apply tactical-button bg-surface-light hover:bg-surface 
+    text-gray-300 focus:ring-gray-500;
+  }
+
+  .data-grid {
+    @apply grid gap-4 p-4;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hidden {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
